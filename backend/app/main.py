@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import List, Optional
+import logging
 
 
 app = FastAPI(title="Borong Perabot API", version="0.1.0")
@@ -67,5 +68,19 @@ def list_products() -> List[Product]:
 @app.get("/")
 def root():
     return {"status": "ok", "service": "borong-perabot-api"}
+
+
+class ContactMessage(BaseModel):
+    nama: str
+    email: str
+    telefon: Optional[str] = None
+    subjek: Optional[str] = None
+    mesej: str
+
+
+@app.post("/contact")
+def submit_contact(payload: ContactMessage):
+    logging.info("[Contact] nama=%s email=%s telefon=%s subjek=%s mesej=%s", payload.nama, payload.email, payload.telefon, payload.subjek, payload.mesej)
+    return {"ok": True, "message": "Mesej diterima. Terima kasih!"}
 
 

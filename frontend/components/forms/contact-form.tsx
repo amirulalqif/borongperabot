@@ -8,18 +8,36 @@ import { Button } from "@/components/ui/button";
 export function ContactForm() {
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setLoading(true);
     const form = new FormData(e.currentTarget);
-    const payload = Object.fromEntries(form.entries());
-    console.log("Hubungi Kami (MVP):", payload);
-    setTimeout(() => {
-      setLoading(false);
-      setSubmitted(true);
-      (e.currentTarget as HTMLFormElement).reset();
-    }, 700);
+    const body = Object.fromEntries(form.entries());
+    const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || "http://127.0.0.1:8000";
+    fetch(`${baseUrl}/contact`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        nama: body.nama,
+        email: body.email,
+        telefon: body.telefon || undefined,
+        subjek: body.subjek || undefined,
+        mesej: body.mesej,
+      }),
+    })
+      .then(async (res) => {
+        if (!res.ok) throw new Error("Gagal menghantar mesej.");
+        return res.json();
+      })
+      .then(() => {
+        setSubmitted(true);
+        setError(null);
+        (e.currentTarget as HTMLFormElement).reset();
+      })
+      .catch((err) => setError(err.message))
+      .finally(() => setLoading(false));
   }
 
   return (
@@ -50,6 +68,9 @@ export function ContactForm() {
         </Button>
         {submitted && (
           <span className="ml-3 text-sm text-green-600">Terima kasih! Mesej anda telah dihantar.</span>
+        )}
+        {error && (
+          <span className="ml-3 text-sm text-red-600">{error}</span>
         )}
       </div>
     </form>
