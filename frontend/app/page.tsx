@@ -1,3 +1,11 @@
+import { HeroSection } from "@/components/sections/hero";
+import { FeaturedProductsSection } from "@/components/sections/featured-products";
+
 export default function Home() {
-  return null;
+  return (
+    <>
+      <HeroSection />
+      <FeaturedProductsSection />
+    </>
+  );
 }
