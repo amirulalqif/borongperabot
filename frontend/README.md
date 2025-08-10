@@ -20,6 +20,14 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## AWS Amplify (Deploy Ringkas)
+
+1. Push repo ke GitHub.
+2. Di AWS Amplify Console → New app → Host web app → sambungkan repo.
+3. Pilih folder `frontend/` sebagai root; Amplify akan gunakan `frontend/amplify.yml`.
+4. Set env (optional): `NEXT_PUBLIC_API_BASE_URL` kepada URL backend (Elastic Beanstalk).
+5. Deploy.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
