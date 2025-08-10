@@ -44,7 +44,9 @@ export function Footer() {
           <h3 className="text-sm font-semibold mb-3">Hubungi</h3>
           <ul className="space-y-2 text-sm text-muted-foreground">
             <li>E-mel: hello@borongperabot.com</li>
-            <li>Telefon: +60 12-345 6789</li>
+            <li>
+              Telefon: <a className="hover:text-primary" href="tel:+60196500088">+60196500088</a>
+            </li>
             <li>Waktu: Isnin - Jumaat, 9 pagi - 6 petang</li>
           </ul>
         </div>
