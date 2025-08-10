@@ -14,7 +14,6 @@ export function ContactForm() {
     setLoading(true);
     const form = new FormData(e.currentTarget);
     const payload = Object.fromEntries(form.entries());
-    // eslint-disable-next-line no-console
     console.log("Hubungi Kami (MVP):", payload);
     setTimeout(() => {
       setLoading(false);

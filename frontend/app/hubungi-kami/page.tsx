@@ -13,7 +13,6 @@ export const metadata: Metadata = {
 };
 
 const GOOGLE_MAPS_URL = "https://maps.app.goo.gl/9KXMYXBiGKxAEdGT8?g_st=iw";
-const STORE_PHONE = "+60196500088";
 const STORE_EMAIL = "hello@borongperabot.com";
 
 export default function HubungiKamiPage() {
@@ -43,7 +42,14 @@ export default function HubungiKamiPage() {
               <h2 className="text-2xl font-semibold tracking-tight">Maklumat Perhubungan</h2>
               <div className="flex items-center gap-3 text-sm">
                 <Phone className="h-4 w-4 text-primary" />
-                <a href={`tel:${STORE_PHONE}`} className="hover:underline">{STORE_PHONE}</a>
+                <a
+                  href={`https://wa.me/60196500088`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:underline"
+                >
+                  WhatsApp: +60196500088
+                </a>
               </div>
               <div className="flex items-center gap-3 text-sm">
                 <Mail className="h-4 w-4 text-primary" />

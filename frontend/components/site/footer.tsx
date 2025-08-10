@@ -45,7 +45,7 @@ export function Footer() {
           <ul className="space-y-2 text-sm text-muted-foreground">
             <li>E-mel: hello@borongperabot.com</li>
             <li>
-              Telefon: <a className="hover:text-primary" href="tel:+60196500088">+60196500088</a>
+              WhatsApp: <a className="hover:text-primary" href="https://wa.me/60196500088" target="_blank" rel="noopener noreferrer">+60196500088</a>
             </li>
             <li>Waktu: Isnin - Jumaat, 9 pagi - 6 petang</li>
           </ul>
