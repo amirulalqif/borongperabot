@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
 
 export function Footer() {
@@ -7,7 +8,7 @@ export function Footer() {
       <div className="container mx-auto px-4 py-10 grid gap-8 md:grid-cols-4">
         <div className="space-y-2">
           <div className="flex items-center gap-2">
-            <span className="inline-block h-8 w-8 rounded-md bg-primary" />
+            <Image src="/bitcoin.svg" alt="Logo" width={32} height={32} className="h-8 w-8" />
             <span className="text-lg font-semibold">Borong Perabot</span>
           </div>
           <p className="text-sm text-muted-foreground max-w-prose">

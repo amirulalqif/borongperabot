@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -17,7 +18,7 @@ export function Navbar() {
         <div className="container mx-auto flex h-16 items-center justify-between px-4">
           <div className="flex items-center gap-3">
             <Link href="/" className="flex items-center gap-2">
-              <span className="inline-block h-8 w-8 rounded-md bg-primary" />
+              <Image src="/bitcoin.svg" alt="Logo" width={32} height={32} className="h-8 w-8" />
               <span className="text-lg font-semibold tracking-tight">Borong Perabot</span>
             </Link>
           </div>

@@ -41,7 +41,9 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: "/bitcoin.svg",
+    shortcut: "/bitcoin.svg",
+    apple: "/bitcoin.svg",
   },
 };
 
